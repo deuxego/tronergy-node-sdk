@@ -3,7 +3,7 @@
  */
 
 export const TronergyApiEnvironment = {
-    Production: "https://api-gateway-production-c20d.up.railway.app",
+    Production: "https://api.tronergy.io/api",
 } as const;
 
 export type TronergyApiEnvironment = typeof TronergyApiEnvironment.Production;
