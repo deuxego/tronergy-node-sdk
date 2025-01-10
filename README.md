@@ -26,7 +26,6 @@ const client = new TronergyApiClient({ token: "YOUR_TOKEN" });
 await client.order.create({
     address: "TXY1kVZ74wLg4mPRPoK9o1RG99NY82MHEV",
     energy: 66000,
-    period: "1H",
 });
 ```
 
@@ -38,7 +37,7 @@ following namespace:
 ```typescript
 import { TronergyApi } from "tronergy-node-sdk";
 
-const request: TronergyApi.CreateOrderDto = {
+const request: TronergyApi.CreateOrder = {
     ...
 };
 ```

@@ -58,7 +58,6 @@ await client.order.getAll();
 await client.order.create({
     address: "TXY1kVZ74wLg4mPRPoK9o1RG99NY82MHEV",
     energy: 66000,
-    period: "1H",
 });
 ```
 
@@ -75,7 +74,7 @@ await client.order.create({
 <dl>
 <dd>
 
-**request:** `TronergyApi.CreateOrderDto`
+**request:** `TronergyApi.CreateOrder`
 
 </dd>
 </dl>
@@ -142,7 +141,7 @@ await client.order.get("orderId");
 </dl>
 </details>
 
-<details><summary><code>client.order.<a href="/src/api/resources/order/client/Client.ts">getRate</a>() -> TronergyApi.RateDto</code></summary>
+<details><summary><code>client.order.<a href="/src/api/resources/order/client/Client.ts">getRate</a>() -> TronergyApi.Rate</code></summary>
 <dl>
 <dd>
 

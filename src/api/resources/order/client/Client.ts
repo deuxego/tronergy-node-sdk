@@ -47,7 +47,8 @@ export class Order {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "tronergy-node-sdk",
-                "X-Fern-SDK-Version": "0.0.27",
+                "X-Fern-SDK-Version": "0.0.28",
+                "User-Agent": "tronergy-node-sdk/0.0.28",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -90,18 +91,17 @@ export class Order {
     }
 
     /**
-     * @param {TronergyApi.CreateOrderDto} request
+     * @param {TronergyApi.CreateOrder} request
      * @param {Order.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
      *     await client.order.create({
      *         address: "TXY1kVZ74wLg4mPRPoK9o1RG99NY82MHEV",
-     *         energy: 66000,
-     *         period: "1H"
+     *         energy: 66000
      *     })
      */
     public async create(
-        request: TronergyApi.CreateOrderDto,
+        request: TronergyApi.CreateOrder,
         requestOptions?: Order.RequestOptions,
     ): Promise<TronergyApi.OrderDto> {
         const _response = await core.fetcher({
@@ -114,14 +114,15 @@ export class Order {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "tronergy-node-sdk",
-                "X-Fern-SDK-Version": "0.0.27",
+                "X-Fern-SDK-Version": "0.0.28",
+                "User-Agent": "tronergy-node-sdk/0.0.28",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.CreateOrderDto.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            body: serializers.CreateOrder.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
@@ -175,7 +176,8 @@ export class Order {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "tronergy-node-sdk",
-                "X-Fern-SDK-Version": "0.0.27",
+                "X-Fern-SDK-Version": "0.0.28",
+                "User-Agent": "tronergy-node-sdk/0.0.28",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -223,7 +225,7 @@ export class Order {
      * @example
      *     await client.order.getRate()
      */
-    public async getRate(requestOptions?: Order.RequestOptions): Promise<TronergyApi.RateDto> {
+    public async getRate(requestOptions?: Order.RequestOptions): Promise<TronergyApi.Rate> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.TronergyApiEnvironment.Production,
@@ -234,7 +236,8 @@ export class Order {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "tronergy-node-sdk",
-                "X-Fern-SDK-Version": "0.0.27",
+                "X-Fern-SDK-Version": "0.0.28",
+                "User-Agent": "tronergy-node-sdk/0.0.28",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -246,7 +249,7 @@ export class Order {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.RateDto.parseOrThrow(_response.body, {
+            return serializers.Rate.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,

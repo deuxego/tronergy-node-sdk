@@ -1,1 +1,1 @@
-export { type CreateOrderDto } from "./CreateOrderDto";
+export { type CreateOrder } from "./CreateOrder";

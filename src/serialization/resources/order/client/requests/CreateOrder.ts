@@ -6,19 +6,19 @@ import * as serializers from "../../../../index";
 import * as TronergyApi from "../../../../../api/index";
 import * as core from "../../../../../core";
 
-export const CreateOrderDto: core.serialization.Schema<serializers.CreateOrderDto.Raw, TronergyApi.CreateOrderDto> =
+export const CreateOrder: core.serialization.Schema<serializers.CreateOrder.Raw, TronergyApi.CreateOrder> =
     core.serialization.object({
         address: core.serialization.string(),
         energy: core.serialization.number(),
-        period: core.serialization.string(),
+        period: core.serialization.stringLiteral("1H").optional(),
         callback: core.serialization.string().optional(),
     });
 
-export declare namespace CreateOrderDto {
+export declare namespace CreateOrder {
     export interface Raw {
         address: string;
         energy: number;
-        period: string;
+        period?: "1H" | null;
         callback?: string | null;
     }
 }

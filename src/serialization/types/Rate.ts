@@ -6,12 +6,11 @@ import * as serializers from "../index";
 import * as TronergyApi from "../../api/index";
 import * as core from "../../core";
 
-export const RateDto: core.serialization.ObjectSchema<serializers.RateDto.Raw, TronergyApi.RateDto> =
-    core.serialization.object({
-        rate: core.serialization.number(),
-    });
+export const Rate: core.serialization.ObjectSchema<serializers.Rate.Raw, TronergyApi.Rate> = core.serialization.object({
+    rate: core.serialization.number(),
+});
 
-export declare namespace RateDto {
+export declare namespace Rate {
     export interface Raw {
         rate: number;
     }
