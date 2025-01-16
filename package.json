@@ -1,6 +1,6 @@
 {
     "name": "tronergy-node-sdk",
-    "version": "0.0.31",
+    "version": "0.0.32",
     "private": false,
     "repository": "https://github.com/deuxego/tronergy-node-sdk",
     "main": "./index.js",
