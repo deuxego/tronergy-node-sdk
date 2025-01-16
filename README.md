@@ -24,7 +24,7 @@ import { TronergyApiClient } from "tronergy-node-sdk";
 
 const client = new TronergyApiClient({ token: "YOUR_TOKEN" });
 await client.order.create({
-    address: "TXY1kVZ74wLg4mPRPoK9o1RG99NY82MHEV",
+    address: "THQbYWkPDChusW8gNSmrsHeM3Nd8NgrawJ",
     energy: 66000,
 });
 ```

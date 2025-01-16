@@ -5,7 +5,7 @@
 /**
  * @example
  *     {
- *         address: "TXY1kVZ74wLg4mPRPoK9o1RG99NY82MHEV",
+ *         address: "THQbYWkPDChusW8gNSmrsHeM3Nd8NgrawJ",
  *         energy: 66000
  *     }
  */
@@ -14,7 +14,7 @@ export interface CreateOrder {
     address: string;
     /** The amount of energy the user wants to purchase, expressed in energy units. */
     energy: number;
-    /** The time period for which the energy will be valid. Acceptable values are defined in the EnergyPeriod enum. */
+    /** The time period for which the energy will be valid. */
     period?: "1H";
     /** Optional callback URL where a notification will be sent upon order completion. This URL should be accessible by the API service. */
     callback?: string;
